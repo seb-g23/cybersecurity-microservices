@@ -122,7 +122,7 @@ app.delete('/threats/:id', (req, res) => {
     
     if (threats[id]) {
         delete threats[id];
-        res.status(204).send(); // No content
+        res.status(200).send({message: 'Threat deleted successfully'} ); 
     } else {
         res.status(404).json({ message: 'Threat not found' });
     }
